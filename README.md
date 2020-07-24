@@ -13,10 +13,22 @@ The preliminary exploratory analysis shows that the number of rides during the c
 
 ![Alt text](https://raw.githubusercontent.com/behzadasd/TDI/master/Figs/TDI_Rides_WeatherCondition.png)
 
+![Alt text](https://raw.githubusercontent.com/behzadasd/TDI/master/Figs/TDI_Surges_WeatherCondition.png)
+
+![Alt text](https://raw.githubusercontent.com/behzadasd/TDI/master/Figs/TDI_Histograms_1.png)
+
 
 The data in current format is associated for each individual ride. In order to create a time series dataset for the exploration and correlation analysis, I created a new dataset, where all the ride and weather information are aggregated for each one-hour periods, so the change in patterns of different features can be tracked. For each 1-hour timeframe, number of rides during the period is counted. The price and surge multipliers are averaged during each period to calculate the average price per hour. Numerical weather information such as temperature, precipitation intensity, humidity, dew point, wind speed, cloud coverage, UV index, ect. are also averaged per each period. For categorical features such as descriptive weather conditions, the weather conditions with the highest number of occurrences during each period is selected as the dominant weather condition of that period. 
 
 The new aggregated data shows that number of rides per hour has the highest correlation with wind speed and air pressure. Precipitation intensity and cloud cover have also high correlation with the number of rides. However, changes in wind speed and air pressures can be explained by changes in precipitation, since the rainy weather is normally associate with higher wind speeds and low air pressure.
 
 I will perform a broader exploratory analysis to identify the weather features that have the highest correlation with the ride demand and price surges. I will obtain a larger ride dataset from Uber and Lyft platforms to be used for training the predictive model. Hourly weather information is also publicly available through NOAA website, which can be obtained and paired with the associated ride information for each time period. In the next step, I’ll develop and train a Deep Learning Neural Network model using Keras to predict the ride demand based on the selected weather inputs. After developing the predictive model, I will develop a web-based model to obtain location-based real-time weather data and hourly forecasts ClimaCell’s weather API and use the information as inputs to the predictive model to forecast the ride demand over the next hours.
+
+![Alt text](https://raw.githubusercontent.com/behzadasd/TDI/master/Figs/TDI_Rides_Count_Corr.png)
+
+
+![Alt text](https://raw.githubusercontent.com/behzadasd/TDI/master/Figs/TDI_Corr_all.png)
+
+
+
 
